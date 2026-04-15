@@ -5,11 +5,7 @@ plugins {
 
 android {
     namespace = "com.gyugle.chromaflow"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.gyugle.chromaflow"
@@ -17,7 +13,6 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
     }
 
     buildTypes {
@@ -29,14 +24,20 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
+
     useLibrary("wear-sdk")
     buildFeatures {
         compose = true
     }
+}
+
+kotlin {
+    jvmToolchain(21)
 }
 
 dependencies {

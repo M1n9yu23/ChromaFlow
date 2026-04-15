@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.compose)
     id("maven-publish")
 }
 
@@ -21,6 +22,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    buildFeatures {
+        compose = true
     }
 
     publishing {
@@ -45,5 +50,9 @@ kotlin {
 }
 
 dependencies {
-    implementation(libs.core.ktx)
+    implementation(platform(libs.compose.bom))
+    implementation(libs.ui)
+    implementation(libs.foundation)
+    implementation(libs.compose.animation)
+    implementation(libs.lifecycle.runtime.compose)
 }

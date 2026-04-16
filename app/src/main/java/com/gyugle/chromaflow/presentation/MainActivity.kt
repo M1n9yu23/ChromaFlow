@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.wear.compose.foundation.pager.HorizontalPager
 import androidx.wear.compose.foundation.pager.rememberPagerState
 import androidx.wear.compose.material3.AppScaffold
+import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
 import com.gyugle.chromaflow.ChromaFlowDirection
 import com.gyugle.chromaflow.ChromaFlowImage
 import com.gyugle.chromaflow.ChromaFlowStyle
@@ -78,6 +79,7 @@ fun SamplePager() {
 fun CustomColorSample() {
   ChromaFlowImage(
     painter = painterResource(R.drawable.img),
+    contentDescription = null,
     style = ChromaFlowStyle(
       glowColor = Color.Cyan,
       durationMillis = 2000,
@@ -100,6 +102,7 @@ fun CustomColorSample() {
 fun NativeColorSample() {
   ChromaFlowImage(
     painter = painterResource(R.drawable.img2),
+    contentDescription = null,
     style = ChromaFlowStyle(
       glowColor = Color.White,
       durationMillis = 2500,
@@ -121,6 +124,7 @@ fun NativeColorSample() {
 fun SubtleGlowSample() {
   ChromaFlowImage(
     painter = painterResource(R.drawable.img3),
+    contentDescription = null,
     style = ChromaFlowStyle(
       glowColor = Color.White,
       baseColor = Color.Green,
@@ -131,4 +135,28 @@ fun SubtleGlowSample() {
     ),
     modifier = Modifier.fillMaxSize(),
   )
+}
+
+@WearPreviewDevices
+@Composable
+fun SamplePagerPreview() {
+  SamplePager()
+}
+
+@WearPreviewDevices
+@Composable
+fun CustomColorSamplePreview() {
+  CustomColorSample()
+}
+
+@WearPreviewDevices
+@Composable
+fun NativeColorSamplePreview() {
+  NativeColorSample()
+}
+
+@WearPreviewDevices
+@Composable
+fun SubtleGlowSamplePreview() {
+  SubtleGlowSample()
 }

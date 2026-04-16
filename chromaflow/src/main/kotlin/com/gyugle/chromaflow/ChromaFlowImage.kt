@@ -36,6 +36,10 @@ import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.role
+import androidx.compose.ui.semantics.semantics
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
@@ -65,6 +69,7 @@ import androidx.lifecycle.repeatOnLifecycle
  * ```kotlin
  * ChromaFlowImage(
  *     painter = painterResource(R.drawable.my_lines),
+ *     contentDescription = "Animated circuit board lines",
  *     style = ChromaFlowStyle(glowColor = Color.Cyan),
  *     modifier = Modifier.fillMaxSize(),
  * )
@@ -74,6 +79,7 @@ import androidx.lifecycle.repeatOnLifecycle
  * ```kotlin
  * ChromaFlowImage(
  *     painter = painterResource(R.drawable.my_lines),
+ *     contentDescription = null, // decorative — hidden from accessibility
  *     style = ChromaFlowStyle(
  *         glowColor = Color.Red,
  *         baseColor = Color.DarkGray,
@@ -88,12 +94,16 @@ import androidx.lifecycle.repeatOnLifecycle
  *
  * @param painter The image to render. The glow effect appears only on opaque pixels,
  *   so images with transparent backgrounds and visible lines work best.
+ * @param contentDescription Text describing this image for accessibility services such as
+ *   TalkBack. Pass `null` if the image is purely decorative and should be ignored by
+ *   accessibility tools.
  * @param modifier [Modifier] applied to the drawing canvas.
  * @param style Visual and animation configuration. See [ChromaFlowStyle] and [ChromaFlowDefaults].
  */
 @Composable
 fun ChromaFlowImage(
   painter: Painter,
+  contentDescription: String?,
   modifier: Modifier = Modifier,
   style: ChromaFlowStyle = ChromaFlowStyle(),
 ) {
@@ -177,8 +187,17 @@ fun ChromaFlowImage(
     listOf(Color.Transparent, style.glowColor.copy(alpha = style.glowAlpha), Color.Transparent)
   }
 
+  val semanticsModifier = if (contentDescription != null) {
+    modifier.semantics {
+      this.contentDescription = contentDescription
+      this.role = Role.Image
+    }
+  } else {
+    modifier.semantics(mergeDescendants = true) {}
+  }
+
   Canvas(
-    modifier = modifier.onSizeChanged { size ->
+    modifier = semanticsModifier.onSizeChanged { size ->
       canvasWidthPx = size.width.toFloat()
     },
   ) {

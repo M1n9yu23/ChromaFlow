@@ -2,15 +2,22 @@
 
 # ChromaFlow
 
-**이미지에 라이프사이클을 인식하는 크로마(글로우) 스윕 애니메이션을 적용하는 Jetpack Compose 라이브러리입니다.**
+**ChromaFlow는 선 기반 이미지 위로 네온 글로우가 흘러가는 스윕 애니메이션을 적용하는 Jetpack Compose 라이브러리입니다.**
+컬러 광원이 이미지를 가로질러 연속적으로 흐르며, 불투명 픽셀에만 정확하게 마스킹되어
+선, 윤곽선, 세밀한 디테일의 형태를 그대로 따라 빛납니다.
+
+> **참고:** ChromaFlow는 현재 **투명 배경을 가진 선 기반 이미지** (네온 사인, 회로 기판, 아웃라인 일러스트 등) 를 지원합니다.
+> 다른 이미지 유형에 대한 지원은 향후 추가될 수 있습니다.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![](https://jitpack.io/v/gyugle/ChromaFlow.svg)](https://jitpack.io/#gyugle/ChromaFlow)
+[![](https://jitpack.io/v/M1n9yu23/ChromaFlow.svg)](https://jitpack.io/#M1n9yu23/ChromaFlow)
 [![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg)](https://android-arsenal.com/api?level=24)
 
 **[English](README.md)**
 
-<!-- 데모 GIF 추가 -->
+| Mobile | Wear OS |
+|:---:|:---:|
+| <img src="assets/mobile_sample.gif" width="200"> | <img src="assets/wear_sample.gif" width="200"> |
 
 </div>
 
@@ -42,11 +49,11 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("com.github.gyugle:ChromaFlow:<version>")
+    implementation("com.github.M1n9yu23:ChromaFlow:<version>")
 }
 ```
 
-> `<version>` 자리에 [최신 릴리즈 태그](https://github.com/gyugle/ChromaFlow/releases)를 입력하세요.
+> `<version>` 자리에 [최신 릴리즈 태그](https://github.com/M1n9yu23/ChromaFlow/releases)를 입력하세요.
 
 ---
 
@@ -57,6 +64,7 @@ dependencies {
 ```kotlin
 ChromaFlowImage(
     painter = painterResource(R.drawable.my_image),
+    contentDescription = "Sample image",
     style = ChromaFlowStyle(glowColor = Color.Cyan),
     modifier = Modifier.fillMaxSize(),
 )
@@ -67,6 +75,7 @@ ChromaFlowImage(
 ```kotlin
 ChromaFlowImage(
     painter = painterResource(R.drawable.my_image),
+    contentDescription = null,
     modifier = Modifier.size(300.dp),
     style = ChromaFlowStyle(
         glowColor = Color.Cyan,
@@ -131,6 +140,15 @@ ChromaFlowStyle(
 
 - Android **API 24+**
 - Jetpack Compose
+
+---
+
+## 기여
+
+버그 수정, 새로운 애니메이션 스타일, 선 기반 이미지를 넘어서는 지원 확장까지 — 모든 기여를 환영합니다.
+좋은 아이디어나 개선 사항이 있다면 PR이나 이슈를 열어주세요.
+
+자세한 내용은 [CONTRIBUTING.md](CONTRIBUTING.md)를 참고하세요.
 
 ---
 

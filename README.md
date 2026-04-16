@@ -2,15 +2,22 @@
 
 # ChromaFlow
 
-**A Jetpack Compose library that renders images with a lifecycle-aware sweeping chroma (glow) animation.**
+**ChromaFlow brings line-based images to life with a sweeping neon glow that flows across your artwork.**
+A colored light band sweeps continuously over the image, masked precisely to every opaque pixel —
+so the effect follows the exact shape of lines, edges, and fine details.
+
+> **Note:** ChromaFlow currently supports **line-based images with a transparent background** (e.g. neon signs, circuit boards, outline illustrations).
+> Support for other image types may be added in future releases.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![](https://jitpack.io/v/gyugle/ChromaFlow.svg)](https://jitpack.io/#gyugle/ChromaFlow)
+[![](https://jitpack.io/v/M1n9yu23/ChromaFlow.svg)](https://jitpack.io/#M1n9yu23/ChromaFlow)
 [![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg)](https://android-arsenal.com/api?level=24)
 
 **[한국어](README-ko.md)**
 
-<!-- Add demo GIF here -->
+| Mobile | Wear OS |
+|:---:|:---:|
+| <img src="assets/mobile_sample.gif" width="200"> | <img src="assets/wear_sample.gif" width="200"> |
 
 </div>
 
@@ -42,11 +49,11 @@ Then add the dependency to your module-level `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.gyugle:ChromaFlow:<version>")
+    implementation("com.github.M1n9yu23:ChromaFlow:<version>")
 }
 ```
 
-> Replace `<version>` with the [latest release tag](https://github.com/gyugle/ChromaFlow/releases).
+> Replace `<version>` with the [latest release tag](https://github.com/M1n9yu23/ChromaFlow/releases).
 
 ---
 
@@ -57,6 +64,7 @@ dependencies {
 ```kotlin
 ChromaFlowImage(
     painter = painterResource(R.drawable.my_image),
+    contentDescription = "Sample image",
     style = ChromaFlowStyle(glowColor = Color.Cyan),
     modifier = Modifier.fillMaxSize(),
 )
@@ -67,6 +75,7 @@ ChromaFlowImage(
 ```kotlin
 ChromaFlowImage(
     painter = painterResource(R.drawable.my_image),
+    contentDescription = null,
     modifier = Modifier.size(300.dp),
     style = ChromaFlowStyle(
         glowColor = Color.Cyan,
@@ -131,6 +140,15 @@ ChromaFlowStyle(
 
 - Android **API 24+**
 - Jetpack Compose
+
+---
+
+## Contributing
+
+All contributions are welcome — bug fixes, new animation styles, or even expanding support beyond line-based images.
+If you have a great idea or improvement, feel free to open a pull request or issue.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ---
 

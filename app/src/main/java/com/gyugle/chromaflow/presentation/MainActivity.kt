@@ -1,3 +1,18 @@
+/*
+ * Copyright 2026 Gyugle
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.gyugle.chromaflow.presentation
 
 import android.os.Bundle
@@ -21,36 +36,36 @@ import com.gyugle.chromaflow.app.R
 import com.gyugle.chromaflow.presentation.theme.ChromaFlowTheme
 
 class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            ChromaFlowTheme {
-                SamplePager()
-            }
-        }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContent {
+      ChromaFlowTheme {
+        SamplePager()
+      }
     }
+  }
 }
 
 @Composable
 fun SamplePager() {
-    val pagerState = rememberPagerState(pageCount = { 3 })
-    AppScaffold {
-        HorizontalPager(
-            state = pagerState,
-            beyondViewportPageCount = 1,
-        ) { page ->
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier.fillMaxSize(),
-            ) {
-                when (page) {
-                    0 -> CustomColorSample()
-                    1 -> NativeColorSample()
-                    2 -> SubtleGlowSample()
-                }
-            }
+  val pagerState = rememberPagerState(pageCount = { 3 })
+  AppScaffold {
+    HorizontalPager(
+      state = pagerState,
+      beyondViewportPageCount = 1,
+    ) { page ->
+      Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier.fillMaxSize(),
+      ) {
+        when (page) {
+          0 -> CustomColorSample()
+          1 -> NativeColorSample()
+          2 -> SubtleGlowSample()
         }
+      }
     }
+  }
 }
 
 /**
@@ -61,17 +76,17 @@ fun SamplePager() {
  */
 @Composable
 fun CustomColorSample() {
-    ChromaFlowImage(
-        painter = painterResource(R.drawable.img),
-        style = ChromaFlowStyle(
-            glowColor = Color.Cyan,
-            durationMillis = 2000,
-            glowAlpha = 0.9f,
-            gradientWidth = 200.dp,
-            direction = ChromaFlowDirection.BIDIRECTIONAL,
-        ),
-        modifier = Modifier.fillMaxSize(),
-    )
+  ChromaFlowImage(
+    painter = painterResource(R.drawable.img),
+    style = ChromaFlowStyle(
+      glowColor = Color.Cyan,
+      durationMillis = 2000,
+      glowAlpha = 0.9f,
+      gradientWidth = 200.dp,
+      direction = ChromaFlowDirection.BIDIRECTIONAL,
+    ),
+    modifier = Modifier.fillMaxSize(),
+  )
 }
 
 /**
@@ -83,17 +98,17 @@ fun CustomColorSample() {
  */
 @Composable
 fun NativeColorSample() {
-    ChromaFlowImage(
-        painter = painterResource(R.drawable.img2),
-        style = ChromaFlowStyle(
-            glowColor = Color.White,
-            durationMillis = 2500,
-            glowAlpha = 0.85f,
-            gradientWidth = 180.dp,
-            direction = ChromaFlowDirection.BIDIRECTIONAL,
-        ),
-        modifier = Modifier.fillMaxSize(),
-    )
+  ChromaFlowImage(
+    painter = painterResource(R.drawable.img2),
+    style = ChromaFlowStyle(
+      glowColor = Color.White,
+      durationMillis = 2500,
+      glowAlpha = 0.85f,
+      gradientWidth = 180.dp,
+      direction = ChromaFlowDirection.BIDIRECTIONAL,
+    ),
+    modifier = Modifier.fillMaxSize(),
+  )
 }
 
 /**
@@ -104,16 +119,16 @@ fun NativeColorSample() {
  */
 @Composable
 fun SubtleGlowSample() {
-    ChromaFlowImage(
-        painter = painterResource(R.drawable.img3),
-        style = ChromaFlowStyle(
-            glowColor = Color.White,
-            baseColor = Color.Green,
-            durationMillis = 3500,
-            glowAlpha = 0.7f,
-            gradientWidth = 250.dp,
-            direction = ChromaFlowDirection.LEFT_TO_RIGHT,
-        ),
-        modifier = Modifier.fillMaxSize(),
-    )
+  ChromaFlowImage(
+    painter = painterResource(R.drawable.img3),
+    style = ChromaFlowStyle(
+      glowColor = Color.White,
+      baseColor = Color.Green,
+      durationMillis = 3500,
+      glowAlpha = 0.7f,
+      gradientWidth = 250.dp,
+      direction = ChromaFlowDirection.LEFT_TO_RIGHT,
+    ),
+    modifier = Modifier.fillMaxSize(),
+  )
 }

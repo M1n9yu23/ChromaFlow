@@ -19,9 +19,9 @@ so the effect follows the exact shape of lines, edges, and fine details.
 |:---:|:---:|
 | <img src="assets/mobile_sample.gif" width="200"> | <img src="assets/wear_sample.gif" width="200"> |
 
-</div>
+> `chromaflow-sample` — Mobile sample / `app` — Wear OS sample
 
----
+</div>
 
 ## Features
 
@@ -30,8 +30,6 @@ so the effect follows the exact shape of lines, edges, and fine details.
 - **Highly customizable** — glow color, base tint, direction, speed, gradient width, easing, and alpha
 - **Recomposition-efficient** — animation reads only inside the Canvas draw phase, skipping full composition
 - **Zero dependencies** beyond Jetpack Compose
-
----
 
 ## Installation
 
@@ -54,8 +52,6 @@ dependencies {
 ```
 
 > Replace `<version>` with the [latest release tag](https://github.com/M1n9yu23/ChromaFlow/releases).
-
----
 
 ## Usage
 
@@ -89,8 +85,6 @@ ChromaFlowImage(
 )
 ```
 
----
-
 ## ChromaFlowStyle
 
 | Parameter | Type | Default | Description |
@@ -103,8 +97,6 @@ ChromaFlowImage(
 | `direction` | `ChromaFlowDirection` | `BIDIRECTIONAL` | Direction of the sweep. |
 | `easing` | `Easing` | `LinearEasing` | Easing curve applied to each sweep pass. |
 
----
-
 ## ChromaFlowDirection
 
 | Value | Description |
@@ -112,8 +104,6 @@ ChromaFlowImage(
 | `LEFT_TO_RIGHT` | Sweeps from left edge to right edge, then instantly resets. |
 | `RIGHT_TO_LEFT` | Sweeps from right edge to left edge, then instantly resets. |
 | `BIDIRECTIONAL` | Sweeps left → right → left continuously (default). |
-
----
 
 ## ChromaFlowDefaults
 
@@ -134,14 +124,10 @@ ChromaFlowStyle(
 | `direction` | `ChromaFlowDirection.BIDIRECTIONAL` |
 | `easing` | `LinearEasing` |
 
----
-
 ## Requirements
 
 - Android **API 24+**
 - Jetpack Compose
-
----
 
 ## Contributing
 
@@ -149,8 +135,6 @@ All contributions are welcome — bug fixes, new animation styles, or even expan
 If you have a great idea or improvement, feel free to open a pull request or issue.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
----
 
 ## License
 

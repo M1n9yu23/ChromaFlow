@@ -19,9 +19,9 @@
 |:---:|:---:|
 | <img src="assets/mobile_sample.gif" width="200"> | <img src="assets/wear_sample.gif" width="200"> |
 
-</div>
+> `chromaflow-sample` — 모바일 샘플 / `app` — Wear OS 샘플
 
----
+</div>
 
 ## 특징
 
@@ -30,8 +30,6 @@
 - **높은 커스터마이징 자유도** — 글로우 색상, 기본 틴트, 방향, 속도, 그래디언트 폭, 이징, 투명도 조절 가능
 - **리컴포지션 효율** — 애니메이션 값을 Canvas 드로우 단계에서만 읽어 불필요한 전체 컴포지션 트리 재구성을 방지
 - **Jetpack Compose 외 추가 의존성 없음**
-
----
 
 ## 설치
 
@@ -54,8 +52,6 @@ dependencies {
 ```
 
 > `<version>` 자리에 [최신 릴리즈 태그](https://github.com/M1n9yu23/ChromaFlow/releases)를 입력하세요.
-
----
 
 ## 사용법
 
@@ -89,8 +85,6 @@ ChromaFlowImage(
 )
 ```
 
----
-
 ## ChromaFlowStyle
 
 | 파라미터 | 타입 | 기본값 | 설명 |
@@ -103,8 +97,6 @@ ChromaFlowImage(
 | `direction` | `ChromaFlowDirection` | `BIDIRECTIONAL` | 글로우가 흐르는 방향. |
 | `easing` | `Easing` | `LinearEasing` | 각 스윕 패스에 적용되는 이징 커브. |
 
----
-
 ## ChromaFlowDirection
 
 | 값 | 설명 |
@@ -112,8 +104,6 @@ ChromaFlowImage(
 | `LEFT_TO_RIGHT` | 왼쪽에서 오른쪽으로 스윕 후 즉시 초기화. |
 | `RIGHT_TO_LEFT` | 오른쪽에서 왼쪽으로 스윕 후 즉시 초기화. |
 | `BIDIRECTIONAL` | 왼쪽 → 오른쪽 → 왼쪽으로 연속 스윕 (기본값). |
-
----
 
 ## ChromaFlowDefaults
 
@@ -134,14 +124,10 @@ ChromaFlowStyle(
 | `direction` | `ChromaFlowDirection.BIDIRECTIONAL` |
 | `easing` | `LinearEasing` |
 
----
-
 ## 요구 사항
 
 - Android **API 24+**
 - Jetpack Compose
-
----
 
 ## 기여
 
@@ -149,8 +135,6 @@ ChromaFlowStyle(
 좋은 아이디어나 개선 사항이 있다면 PR이나 이슈를 열어주세요.
 
 자세한 내용은 [CONTRIBUTING.md](CONTRIBUTING.md)를 참고하세요.
-
----
 
 ## 라이선스
 

@@ -4,7 +4,6 @@ First off, thank you for considering a contribution!
 We welcome all patches, ideas, and improvements — whether it's a bug fix, a new animation style,
 or expanding support beyond line-based images to work with backgrounds and richer artwork.
 
----
 
 ## What we'd love to see
 
@@ -17,7 +16,6 @@ Here are some ideas, but don't let this list limit you:
 - Bug fixes and edge case handling
 - Documentation improvements and translations
 
----
 
 ## Preparing a pull request
 
@@ -30,7 +28,6 @@ Make sure your code is properly formatted and lint-clean before opening a PR:
 
 Please correct any failures before requesting a review.
 
----
 
 ## Code review
 

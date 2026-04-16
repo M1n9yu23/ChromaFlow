@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 rootProject.name = "ChromaFlow"
 include(":app")
 include(":chromaflow")
+include(":chromaflow-sample")

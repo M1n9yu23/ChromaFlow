@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.gyugle.chromaflow.app"
+    namespace = "com.gyugle.chromaflow.sample"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.gyugle.chromaflow"
-        minSdk = 30
+        applicationId = "com.gyugle.chromaflow.sample"
+        minSdk = 24
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -30,7 +30,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
 
-    useLibrary("wear-sdk")
     buildFeatures {
         compose = true
     }
@@ -42,19 +41,11 @@ kotlin {
 
 dependencies {
     implementation(project(":chromaflow"))
-    implementation(libs.play.services.wearable)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
-    implementation(libs.compose.material3)
-    implementation(libs.compose.foundation)
-    implementation(libs.compose.ui.tooling)
-    implementation(libs.wear.tooling.preview)
     implementation(libs.activity.compose)
-    implementation(libs.core.splashscreen)
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.ui.test.junit4)
+    implementation(libs.foundation)
     debugImplementation(libs.ui.tooling)
-    debugImplementation(libs.ui.test.manifest)
 }

@@ -11,6 +11,7 @@ activityCompose = "1.13.0"
 coreSplashscreen = "1.2.0"
 lifecycleRuntimeCompose = "2.10.0"
 spotless = "8.4.0"
+chromaflow = "v1.0.0"
 
 [libraries]
 play-services-wearable = { group = "com.google.android.gms", name = "play-services-wearable", version.ref = "playServicesWearable" }
@@ -30,6 +31,7 @@ core-splashscreen = { group = "androidx.core", name = "core-splashscreen", versi
 foundation = { group = "androidx.compose.foundation", name = "foundation" }
 compose-animation = { group = "androidx.compose.animation", name = "animation" }
 lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleRuntimeCompose" }
+chromaflow = { group = "com.github.M1n9yu23", name = "ChromaFlow", version.ref = "chromaflow" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

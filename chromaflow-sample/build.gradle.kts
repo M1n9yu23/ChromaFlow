@@ -40,7 +40,7 @@ kotlin {
 }
 
 dependencies {
-  implementation(project(":chromaflow"))
+  implementation(libs.chromaflow)
   implementation(platform(libs.compose.bom))
   implementation(libs.ui)
   implementation(libs.ui.graphics)

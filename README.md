@@ -6,7 +6,7 @@
 A colored light band sweeps continuously over the image, masked precisely to every opaque pixel —
 so the effect follows the exact shape of lines, edges, and fine details.
 
-> **Note:** ChromaFlow currently supports **line-based images with a transparent background** (e.g. neon signs, circuit boards, outline illustrations).
+> **Note:** ChromaFlow currently supports **line-only images with no background** (e.g. neon signs, circuit boards, outline illustrations).
 > Support for other image types may be added in future releases.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)

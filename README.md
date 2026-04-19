@@ -136,6 +136,10 @@ If you have a great idea or improvement, feel free to open a pull request or iss
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
+## Support
+
+If ChromaFlow has been useful to you, consider giving it a ⭐ — it means a lot!
+
 ## License
 
 ```
